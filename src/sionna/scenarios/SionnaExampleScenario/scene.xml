@@ -1,0 +1,608 @@
+<scene version="2.1.0">
+
+<!-- Defaults, these can be set via the command line: -Darg=value -->
+
+
+<!-- Camera and Rendering Parameters -->
+
+	<integrator type="path" id="elm__0" name="elm__0">
+		<integer name="max_depth" value="12"/>
+	</integrator>
+
+<!-- Materials -->
+
+	<bsdf type="diffuse" id="mat-itu_brick" name="mat-itu_brick">
+		<rgb value="1.000000 0.143007 0.135196" name="reflectance"/>
+	</bsdf>
+	<bsdf type="diffuse" id="mat-itu_metal" name="mat-itu_metal">
+		<rgb value="0.000000 0.001646 0.290089" name="reflectance"/>
+	</bsdf>
+	<bsdf type="twosided" id="mat-itu_concrete" name="mat-itu_concrete">
+		<bsdf type="principled" name="bsdf">
+			<rgb value="0.800000 0.800000 0.800000" name="base_color"/>
+			<rgb value="1.000000 1.000000 1.000000" name="spec_tint"/>
+			<float name="spec_trans" value="0.000000"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="roughness" value="0.250000"/>
+			<float name="sheen" value="0.000000"/>
+			<rgb value="1.000000 1.000000 1.000000" name="sheen_tint"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoat_gloss" value="0.000900"/>
+			<float name="specular" value="0.500000"/>
+		</bsdf>
+	</bsdf>
+
+
+<!-- Emitters -->
+
+	<emitter type="constant" id="World" name="World">
+		<rgb value="1.000000 0.002116 0.006070" name="radiance"/>
+	</emitter>
+
+<!-- Shapes -->
+
+	<shape type="ply" id="mesh-Settore_didattico_Celoria-itu_brick" name="mesh-Settore_didattico_Celoria-itu_brick">
+		<string name="filename" value="meshes/Settore_didattico_Celoria-itu_brick.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Settore_didattico_Celoria-itu_metal" name="mesh-Settore_didattico_Celoria-itu_metal">
+		<string name="filename" value="meshes/Settore_didattico_Celoria-itu_metal.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Settore_didattico_Venezian-itu_brick" name="mesh-Settore_didattico_Venezian-itu_brick">
+		<string name="filename" value="meshes/Settore_didattico_Venezian-itu_brick.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Settore_didattico_Venezian-itu_metal" name="mesh-Settore_didattico_Venezian-itu_metal">
+		<string name="filename" value="meshes/Settore_didattico_Venezian-itu_metal.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Scuola_Secondaria_di_Primo_Grado_‘A__Bono_Cairoli’-itu_brick" name="mesh-Scuola_Secondaria_di_Primo_Grado_‘A__Bono_Cairoli’-itu_brick">
+		<string name="filename" value="meshes/Scuola_Secondaria_di_Primo_Grado_‘A__Bono_Cairoli’-itu_brick.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Scuola_Secondaria_di_Primo_Grado_‘A__Bono_Cairoli’-itu_metal" name="mesh-Scuola_Secondaria_di_Primo_Grado_‘A__Bono_Cairoli’-itu_metal">
+		<string name="filename" value="meshes/Scuola_Secondaria_di_Primo_Grado_‘A__Bono_Cairoli’-itu_metal.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Laboratorio_getti_molecolari_e_materiali_nanocristallini-itu_concrete" name="mesh-Laboratorio_getti_molecolari_e_materiali_nanocristallini-itu_concrete">
+		<string name="filename" value="meshes/Laboratorio_getti_molecolari_e_materiali_nanocristallini-itu_concrete.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Laboratorio_getti_molecolari_e_materiali_nanocristallini-itu_metal" name="mesh-Laboratorio_getti_molecolari_e_materiali_nanocristallini-itu_metal">
+		<string name="filename" value="meshes/Laboratorio_getti_molecolari_e_materiali_nanocristallini-itu_metal.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Zero_Gravity-itu_brick" name="mesh-Zero_Gravity-itu_brick">
+		<string name="filename" value="meshes/Zero_Gravity-itu_brick.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_brick" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Zero_Gravity-itu_metal" name="mesh-Zero_Gravity-itu_metal">
+		<string name="filename" value="meshes/Zero_Gravity-itu_metal.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="mesh-Plane" name="mesh-Plane">
+		<string name="filename" value="meshes/Plane.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_concrete" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_1" name="car_1">
+		<string name="filename" value="meshes/car_1.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_2" name="car_2">
+		<string name="filename" value="meshes/car_2.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_3" name="car_3">
+		<string name="filename" value="meshes/car_3.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_4" name="car_4">
+		<string name="filename" value="meshes/car_4.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_5" name="car_5">
+		<string name="filename" value="meshes/car_5.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_6" name="car_6">
+		<string name="filename" value="meshes/car_6.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_7" name="car_7">
+		<string name="filename" value="meshes/car_7.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_8" name="car_8">
+		<string name="filename" value="meshes/car_8.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_9" name="car_9">
+		<string name="filename" value="meshes/car_9.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_10" name="car_10">
+		<string name="filename" value="meshes/car_10.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_11" name="car_11">
+		<string name="filename" value="meshes/car_11.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_12" name="car_12">
+		<string name="filename" value="meshes/car_12.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_13" name="car_13">
+		<string name="filename" value="meshes/car_13.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_14" name="car_14">
+		<string name="filename" value="meshes/car_14.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_15" name="car_15">
+		<string name="filename" value="meshes/car_15.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_16" name="car_16">
+		<string name="filename" value="meshes/car_16.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_17" name="car_17">
+		<string name="filename" value="meshes/car_17.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_18" name="car_18">
+		<string name="filename" value="meshes/car_18.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_19" name="car_19">
+		<string name="filename" value="meshes/car_19.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_20" name="car_20">
+		<string name="filename" value="meshes/car_20.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_21" name="car_21">
+		<string name="filename" value="meshes/car_21.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_22" name="car_22">
+		<string name="filename" value="meshes/car_22.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_23" name="car_23">
+		<string name="filename" value="meshes/car_23.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_24" name="car_24">
+		<string name="filename" value="meshes/car_24.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_25" name="car_25">
+		<string name="filename" value="meshes/car_25.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_26" name="car_26">
+		<string name="filename" value="meshes/car_26.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_27" name="car_27">
+		<string name="filename" value="meshes/car_27.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_28" name="car_28">
+		<string name="filename" value="meshes/car_28.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_29" name="car_29">
+		<string name="filename" value="meshes/car_29.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_30" name="car_30">
+		<string name="filename" value="meshes/car_30.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_31" name="car_31">
+		<string name="filename" value="meshes/car_31.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_32" name="car_32">
+		<string name="filename" value="meshes/car_32.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_33" name="car_33">
+		<string name="filename" value="meshes/car_33.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_34" name="car_34">
+		<string name="filename" value="meshes/car_34.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_35" name="car_35">
+		<string name="filename" value="meshes/car_35.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_36" name="car_36">
+		<string name="filename" value="meshes/car_36.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_37" name="car_37">
+		<string name="filename" value="meshes/car_37.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_38" name="car_38">
+		<string name="filename" value="meshes/car_38.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_39" name="car_39">
+		<string name="filename" value="meshes/car_39.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_40" name="car_40">
+		<string name="filename" value="meshes/car_40.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_41" name="car_41">
+		<string name="filename" value="meshes/car_41.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_42" name="car_42">
+		<string name="filename" value="meshes/car_42.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_43" name="car_43">
+		<string name="filename" value="meshes/car_43.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_44" name="car_44">
+		<string name="filename" value="meshes/car_44.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_45" name="car_45">
+		<string name="filename" value="meshes/car_45.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_46" name="car_46">
+		<string name="filename" value="meshes/car_46.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_47" name="car_47">
+		<string name="filename" value="meshes/car_47.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_48" name="car_48">
+		<string name="filename" value="meshes/car_48.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_49" name="car_49">
+		<string name="filename" value="meshes/car_49.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_50" name="car_50">
+		<string name="filename" value="meshes/car_50.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_51" name="car_51">
+		<string name="filename" value="meshes/car_51.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_52" name="car_52">
+		<string name="filename" value="meshes/car_52.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_53" name="car_53">
+		<string name="filename" value="meshes/car_53.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_54" name="car_54">
+		<string name="filename" value="meshes/car_54.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_55" name="car_55">
+		<string name="filename" value="meshes/car_55.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_56" name="car_56">
+		<string name="filename" value="meshes/car_56.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_57" name="car_57">
+		<string name="filename" value="meshes/car_57.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_58" name="car_58">
+		<string name="filename" value="meshes/car_58.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_59" name="car_59">
+		<string name="filename" value="meshes/car_59.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_60" name="car_60">
+		<string name="filename" value="meshes/car_60.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_61" name="car_61">
+		<string name="filename" value="meshes/car_61.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_62" name="car_62">
+		<string name="filename" value="meshes/car_62.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_63" name="car_63">
+		<string name="filename" value="meshes/car_63.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_64" name="car_64">
+		<string name="filename" value="meshes/car_64.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_65" name="car_65">
+		<string name="filename" value="meshes/car_65.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_66" name="car_66">
+		<string name="filename" value="meshes/car_66.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_67" name="car_67">
+		<string name="filename" value="meshes/car_67.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_68" name="car_68">
+		<string name="filename" value="meshes/car_68.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_69" name="car_69">
+		<string name="filename" value="meshes/car_69.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_70" name="car_70">
+		<string name="filename" value="meshes/car_70.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_71" name="car_71">
+		<string name="filename" value="meshes/car_71.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_72" name="car_72">
+		<string name="filename" value="meshes/car_72.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_73" name="car_73">
+		<string name="filename" value="meshes/car_73.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_74" name="car_74">
+		<string name="filename" value="meshes/car_74.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_75" name="car_75">
+		<string name="filename" value="meshes/car_75.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_76" name="car_76">
+		<string name="filename" value="meshes/car_76.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_77" name="car_77">
+		<string name="filename" value="meshes/car_77.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_78" name="car_78">
+		<string name="filename" value="meshes/car_78.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_79" name="car_79">
+		<string name="filename" value="meshes/car_79.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_80" name="car_80">
+		<string name="filename" value="meshes/car_80.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_81" name="car_81">
+		<string name="filename" value="meshes/car_81.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_82" name="car_82">
+		<string name="filename" value="meshes/car_82.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_83" name="car_83">
+		<string name="filename" value="meshes/car_83.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_84" name="car_84">
+		<string name="filename" value="meshes/car_84.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_85" name="car_85">
+		<string name="filename" value="meshes/car_85.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_86" name="car_86">
+		<string name="filename" value="meshes/car_86.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_87" name="car_87">
+		<string name="filename" value="meshes/car_87.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_88" name="car_88">
+		<string name="filename" value="meshes/car_88.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_89" name="car_89">
+		<string name="filename" value="meshes/car_89.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_90" name="car_90">
+		<string name="filename" value="meshes/car_90.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_91" name="car_91">
+		<string name="filename" value="meshes/car_91.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_92" name="car_92">
+		<string name="filename" value="meshes/car_92.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_93" name="car_93">
+		<string name="filename" value="meshes/car_93.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_94" name="car_94">
+		<string name="filename" value="meshes/car_94.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_95" name="car_95">
+		<string name="filename" value="meshes/car_95.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_96" name="car_96">
+		<string name="filename" value="meshes/car_96.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_97" name="car_97">
+		<string name="filename" value="meshes/car_97.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_98" name="car_98">
+		<string name="filename" value="meshes/car_98.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_99" name="car_99">
+		<string name="filename" value="meshes/car_99.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_100" name="car_100">
+		<string name="filename" value="meshes/car_100.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+	<shape type="ply" id="car_0" name="car_0">
+		<string name="filename" value="meshes/car_0.ply"/>
+		<boolean name="face_normals" value="true"/>
+		<ref id="mat-itu_metal" name="bsdf"/>
+	</shape>
+
+<!-- Volumes -->
+
+</scene>
